@@ -1,5 +1,5 @@
 # Study
-===
+---
 ## Introduce
 
 1. 一个用于学习的git文件夹
