@@ -26,12 +26,12 @@ page {
   width: 200rpx;
   height: 80rpx;
   border-radius: 5px;
-  text-align: center;
-  line-height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .moto {
   font-size: 22rpx;
-  font-weight: bold;  
+  font-weight: bold;
 }
-
