@@ -1,0 +1,11 @@
+/* pages/posts/post.wxss */
+
+swiper {
+  width: 750rpx;
+  height: 500rpx;
+}
+
+swiper image {
+  width: 750rpx;
+  height: 500rpx;
+}

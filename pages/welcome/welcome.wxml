@@ -1,3 +1,7 @@
-<view>
-  hello
+<view class='container'>
+  <image class='user-avater' src='/images/avater.png'></image>
+  <text class='user-name'>Hello，World</text>
+  <view class='moto-container'>
+     <text class='moto'>点击进入</text> 
+  </view>
 </view>
