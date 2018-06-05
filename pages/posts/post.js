@@ -12,7 +12,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var post_content1 = {
+      date:"Sep 18 2016",
+      title:"一行白鹭上青天",
+      post_img:"/images/post/crab.png",
+      content:"春花秋月何时了，往事知多少，小楼昨夜又东风，故国不堪回首月明中。雕栏玉砌应犹在，只是朱颜改，问君能有几多愁，恰似一江春水向东流。",
+      view_num:"112",
+      collect_num:"96",
+      author_img:"/images/avatar/1.png",
+    }
   },
 
   /**

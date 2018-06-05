@@ -13,7 +13,7 @@
   <view class="post-container">
     <view class="post-author-date">
       <image class="post-author" src="/images/avatar/1.png"></image>
-      <text class="post-date">NOV 23 2016</text>
+      <text class="post-date">{{NOV 23 2016}}</text>
     </view>
     <text class="post-title">一行白鹭上青天</text>
     <image class="post-image" src="/images/post/crab.png"></image>
