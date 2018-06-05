@@ -5,8 +5,8 @@
     
   ],
   "window": {
-    "navigationBarBackgroundColor": "#b3d4db",
-    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#405f80",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "小程序",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",

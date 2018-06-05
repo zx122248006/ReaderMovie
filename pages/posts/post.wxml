@@ -1,14 +1,44 @@
 <view class="comtainer">
-    <swiper indicator-dots="true" autoplay="true" interval="5000">
-      <swiper-item>
-        <image src="/images/wx.png"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="/images/vr.png"></image>
-      </swiper-item>
-      <swiper-item>
-        <image src="/images/iqiyi.png"></image>
-      </swiper-item>
-    </swiper>
+  <swiper indicator-dots="true" autoplay="true" interval="5000">
+    <swiper-item>
+      <image src="/images/wx.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/vr.png"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/iqiyi.png"></image>
+    </swiper-item>
+  </swiper>
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="/images/avatar/1.png"></image>
+      <text class="post-date">NOV 23 2016</text>
+    </view>
+    <text class="post-title">一行白鹭上青天</text>
+    <image class="post-image" src="/images/post/crab.png"></image>
+    <text class="post-content">春花秋月何时了，往事知多少，小楼昨夜又东风，故国不堪回首月明中。雕栏玉砌应犹在，只是朱颜改，问君能有几多愁，恰似一江春水向东流，
+    </text>
+    <view class="post-like">
+      <image class="post-like-image" src="../../images/icon/chat.png"></image>
+      <text class="post-like-font">92</text>
+      <image class="post-like-image" src="../../images/icon/view.png"></image>
+      <text class="post-like-font">65</text>
+    </view>
+  </view>
+  <view class="post-container">
+    <view class="post-author-date">
+      <image class="post-author" src="/images/avatar/1.png"></image>
+      <text class="post-date">NOV 23 2016</text>
+    </view>
+    <text class="post-title">静夜思</text>
+    <image class="post-image" src="/images/post/bl.png"></image>
+    <text class="post-content">床前明月光，疑是地上霜，举头望明月，低头思故乡。</text>
+    <view class="post-like">
+      <image class="post-like-image" src="../../images/icon/chat.png"></image>
+      <text class="post-like-font">33</text>
+      <image class="post-like-image" src="../../images/icon/view.png"></image>
+      <text class="post-like-font">56</text>
+    </view>
+  </view>
 </view>
-
