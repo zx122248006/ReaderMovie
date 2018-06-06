@@ -1,3 +1,7 @@
 text {
     font-size: 22rpx;
 }
+
+page {
+  background: #eee;
+}
