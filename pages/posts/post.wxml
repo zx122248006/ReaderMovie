@@ -12,6 +12,7 @@
   </swiper>
 
   <block wx:for="{{posts_key}}" wx:for-item="item">
+
     <view class="post-container">
       <view class="post-author-date">
         <image class="post-author" src="{{item.avatar}}"></image>
@@ -27,6 +28,7 @@
         <text class="post-like-font">{{item.reading}}</text>
       </view>
     </view>
+    
   </block>
   
   <view class="post-container">
