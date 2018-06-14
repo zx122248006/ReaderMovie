@@ -15,7 +15,8 @@
 
   <block wx:for="{{posts_key}}" wx:for-item="item">
 
-    <template is="postItem" data="{{item}}"></template>
+    <!-- 在{{item}}中增加3个... 可以使得在模板文件中不用再使用{{item.xxxx}} -->
+    <template is="postItem" data="{{...item}}"></template>
     <!-- 还需要使用data={{item}} 进行数据的赋值 -->
     
   </block>

@@ -24,9 +24,33 @@
     ```
 2. 在wxss中，使用```@import``` 引入模板样式文件。    
 
+3. 在{{item}}中增加3个... 可以使得在模板文件中不用再使用{{item.xxxx}}
+    ```<template is="postItem" data="{{...item}}"></template>```
+    模板文件：
+    ```javascript
+        <template name="postItem">
+            <view class="post-container">
+                <view class="post-author-date">
+                    <image class="post-author" src="{{avatar}}"></image>
+                    <text class="post-date">{{date}}</text>
+                </view>
+                <text class="post-title">{{title}}</text>
+                <image class="post-image" src="{{imgSrc}}"></image>
+                <text class="post-content">{{content}}</text>
+                <view class="post-like">
+                    <image class="post-like-image" src="../../images/icon/chat.png"></image>
+                    <text class="post-like-font">{{collection}}</text>
+                    <image class="post-like-image" src="../../images/icon/view.png"></image>
+                    <text class="post-like-font">{{reading}}</text>
+                </view>
+            </view>
+        </template>
+    ```
 注：
 1. 引用模板时。可以使用相对路径与绝对路径
 例：
+
+
 
 ``` javascript
 <import src="post-item/post-item-template.wxml"></import>
