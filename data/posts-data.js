@@ -7,6 +7,7 @@ var local_database = [{
         collection: "96",
         date: "Sep 18 2016",
         avatar: "/images/avatar/1.png",
+        postId:0,
     },
     {
         title: "静夜思",
@@ -16,6 +17,7 @@ var local_database = [{
         collection: "96",
         date: "NOV 23 2016",
         avatar: "/images/avatar/2.png",
+        postId: 1,
     },
     {
         title: "雨霖铃",
@@ -25,6 +27,7 @@ var local_database = [{
         collection: "6",
         date: "NOV 23 2018",
         avatar: "/images/avatar/3.png",
+        postId: 2,
     },
     {
         title: "明月几时有",
@@ -34,6 +37,7 @@ var local_database = [{
         collection: "6",
         date: "NOV 12 2018",
         avatar: "/images/avatar/3.png",
+        postId: 3,
     },
     {
         title: "陋室铭",
@@ -43,6 +47,7 @@ var local_database = [{
         collection: "6",
         date: "NOV 11 2018",
         avatar: "/images/avatar/3.png",
+        postId: 4,
     },
 ]
 
