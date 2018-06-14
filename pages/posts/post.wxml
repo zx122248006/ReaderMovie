@@ -1,3 +1,6 @@
+<!-- 引用模板时。可以使用先对路径与绝对路径 -->
+<import src="post-item/post-item-template.wxml"></import>
+
 <view class="comtainer">
   <swiper indicator-dots="true" autoplay="true" interval="5000">
     <swiper-item>
@@ -13,37 +16,8 @@
 
   <block wx:for="{{posts_key}}" wx:for-item="item">
 
-    <view class="post-container">
-      <view class="post-author-date">
-        <image class="post-author" src="{{item.avatar}}"></image>
-        <text class="post-date">{{item.date}}</text>
-      </view>
-      <text class="post-title">{{item.title}}</text>
-      <image class="post-image" src="{{item.imgSrc}}"></image>
-      <text class="post-content">{{item.content}}</text>
-      <view class="post-like">
-        <image class="post-like-image" src="../../images/icon/chat.png"></image>
-        <text class="post-like-font">{{item.collection}}</text>
-        <image class="post-like-image" src="../../images/icon/view.png"></image>
-        <text class="post-like-font">{{item.reading}}</text>
-      </view>
-    </view>
+    <template  is="postItem" data="{{item}}"></template>
+    <!-- 还需要使用data={{item}} 进行数据的赋值 -->
     
   </block>
-  
-  <view class="post-container">
-    <view class="post-author-date">
-      <image class="post-author" src="/images/avatar/2.png"></image>
-      <text class="post-date">NOV 23 2016</text>
-    </view>
-    <text class="post-title">静夜思</text>
-    <image class="post-image" src="/images/post/bl.png"></image>
-    <text class="post-content">床前明月光，疑是地上霜，举头望明月，低头思故乡。</text>
-    <view class="post-like">
-      <image class="post-like-image" src="../../images/icon/chat.png"></image>
-      <text class="post-like-font">33</text>
-      <image class="post-like-image" src="../../images/icon/view.png"></image>
-      <text class="post-like-font">56</text>
-    </view>
-  </view>
 </view>
