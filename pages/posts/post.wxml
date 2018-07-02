@@ -16,7 +16,8 @@
   <block wx:for="{{posts_key}}" wx:for-item="item">
 
     <!-- 在{{item}}中增加3个... 可以使得在模板文件中不用再使用{{item.xxxx}} -->
-    <!-- 在<template>中增加tapbind没有效果。需要循环出来数据的时候，可以在<template>外增加一个<view>标签，将点击事件增加到外部的<view>中去 -->
+    <!-- 在<template>中增加tapbind没有效果。需要使用循环得到的数据时，可以在<template>外增加一个<view>标签，将点击事件增加到外部的<view>中去，所以
+    这里增加了一个 <view catchtap="onPostTap" data-postId="{{item.postId}}"> </view>  用来包裹循环之后的数据  -->
     <!-- 使用data-xxxx 自定义属性，来获取需要的属性,item用于获取本地数据中的文章的postId属性 -->
     <view catchtap="onPostTap" data-postId="{{item.postId}}"> 
       <template is="postItem" data="{{...item}}" ></template>
