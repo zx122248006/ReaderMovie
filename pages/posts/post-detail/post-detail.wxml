@@ -1,3 +1,22 @@
-<text>
-    文章详情页
-</text>
+<view class='container'>
+    <image class="head-image" src="/images/post/sls.jpg"></image>
+    <!-- 作者 -->
+    <view class='author-date'>
+        <image class="avatar" src="/images/avatar/2.png"></image>
+        <text class='author'>李清照</text>
+        <text class='const-text'>发表于</text>
+        <text class='date'>3天前</text>
+    </view>
+    <!-- 标题 -->
+    <text class='title'>一岁一枯荣</text>
+    <view>
+        <!-- 分享收藏 -->
+        <view>
+            <image src="/images/icon/collection.png"></image>
+            <image src="/images/icon/share.png"></image>
+        </view>
+        <!-- 构建横线 -->
+        <view></view>
+    </view>
+    <text>一行白鹭上青天，无人知是荔枝来。</text>
+</view>
