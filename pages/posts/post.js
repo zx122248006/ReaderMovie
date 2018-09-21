@@ -30,7 +30,7 @@ Page({
     var postId = even.currentTarget.dataset.postid;
     // console.log("on post id is " + postId);
     wx.navigateTo({
-      url: 'post-detail/post-detail?id' + postId,
+      url: 'post-detail/post-detail?id=' + postId,
     })
   }
 

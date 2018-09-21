@@ -37,6 +37,7 @@
     vertical-align: middle;
     color: #666;
     margin-right: 20rpx;
+    border-radius:50%
 }
 
 .const-text {
