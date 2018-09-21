@@ -27,10 +27,10 @@ Page({
   },
 
   onPostTap:function (even) {
-    var postid = even.currentTarget.dataset.postid;
-    console.log("on post id is " + postid);
+    var postId = even.currentTarget.dataset.postid;
+    // console.log("on post id is " + postId);
     wx.navigateTo({
-      url: 'post-detail/post-detail?postid' + postid,
+      url: 'post-detail/post-detail?id' + postId,
     })
   }
 
