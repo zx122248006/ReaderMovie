@@ -1,6 +1,7 @@
 Page({
-  onLoad: function (options) {
-    
+  onLoad: function (option) {
+    var postId = option.postid;
+    console.log(postId)
   },
   
 })
