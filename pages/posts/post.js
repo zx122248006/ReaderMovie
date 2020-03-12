@@ -36,7 +36,13 @@ Page({
     this.setData({
       posts_key: post_content
     });
+    // ES6 中。健值健名相同时，健名可以省略
+    // this.setData({
+    //   post_content:post_content
+    // })
+    // ===
+    // this.setData({post_content})
   },
-
-
+  
+  
 })

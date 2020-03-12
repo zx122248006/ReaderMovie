@@ -12,6 +12,8 @@
   </swiper>
   <block wx:for="{{posts_key}}" wx:for-item="item">
     <view class="post-container">
+    <!-- 可以在wx:for 后面使用wx:for-index="i" 获取索引-->
+    <!-- <text>{{index}}</text> -->
       <view class="post-author-date">
         <image class="post-author" src="{{item.avatar}}"></image>
         <text class="post-date">{{item.date}}</text>
@@ -27,6 +29,8 @@
       </view>
     </view>
   </block>
+
+
   <view class="post-container">
     <view class="post-author-date">
       <image class="post-author" src="/images/avatar/2.png"></image>
@@ -43,3 +47,5 @@
     </view>
   </view>
 </view>
+
+
