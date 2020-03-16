@@ -55,9 +55,9 @@ Page({
 
   onPostTap: function (event) {
     console.log(event.currentTarget.dataset.postid);
-    // wx.navigateTo({
-    //   url: '../posts/post-detail/post-detail',
-    // })
+    wx.navigateTo({
+      url: '../posts/post-detail/post-detail',
+    })
   }
 
 })
