@@ -15,7 +15,7 @@
   <block wx:for="{{posts_key}}" wx:key="a" wx:for-item="b">
     <!-- 使用template模板，还需要将数据传递过去，传递需要使用{{xxx}}的格式，xxx指代的是wx:for-item 的值 -->
     <!-- 为了给组件绑定事件，需要在template外增加view 并绑定事件，为了区别点击的不同，需要绑定不同的索引 -->
-    <view catch:tap="onPostTap" data-postid="{{b.numId}}">
+    <view catch:tap="onPostTap" data-postid="{{b.postId}}">
       <template is="postItem" data="{{...b}}">
         <!-- 为了使传递过来的数据不用再加前缀，需要在传值的时候增加... -->
       </template>

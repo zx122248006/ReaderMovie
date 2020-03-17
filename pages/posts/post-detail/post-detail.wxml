@@ -1,21 +1,22 @@
 <view class="container">
-  <image class="head-image" src="/images/post/sls.jpg"></image>
+  <image class="head-image" src="{{postKey.headImageSrc}}"></image>
   <image class="audio" src="/images/music/music-start.png"></image>
   <view class="author-date">
-    <image class="avatar" src="/images/avatar/2.png"></image>
-    <text class="author">胡歌</text>
+    <image class="avatar" src="{{postKey.avatar}}"></image>
+    <text class="author">{{postKey.author}}</text>
     <text class="const-text">发表于</text>
-    <text class="date">三天前</text>
+    <text class="date">{{postKey.dataTime}}</text>
   </view>
-  <text class="title">炉石传说真好玩</text>
+  <text class="title">{{postKey.title}}</text>
   <view class="tool">
     <view class="circle-img">
-      <image src="/images/icon/collection.png"></image>
-      <image class="share-img" src="/images/icon/share.png"></image>
+      <!-- <image src="/images/icon/collection.png" catch:tap="onCollectionTap"></image> -->
+      <!-- 使用wx:if 来判断数据的值，再决定后续的样式 -->
+      <image src="/images/icon/collection.png" wx:if="{{collected}}"></image>
+      <image src="/images/icon/collection-anti.png" wx:else></image>
+      <image catch:tap="onShareTap" class="share-img" src="/images/icon/share.png"></image>
     </view>
     <view class="horizon"></view>
   </view>
-  <text class="detail">
-    Aliquip ea sint ut mollit.Aliquip ea sint ut mollit.Aliquip ea sint ut mollit.Aliquip ea sint ut mollit.
-  </text>
+  <text class="detail">{{postKey.detail}}</text>
 </view>

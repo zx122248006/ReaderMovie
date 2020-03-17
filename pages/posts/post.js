@@ -5,12 +5,12 @@ let postData = require('../../data/posts-data.js')
 // pages/posts/post.js
 
 // 定义一个变量接收posts-data文件中定义的变量。使用require方法进行接收,此处只能使用相对相对路径。
-var postsData = require('../../data/posts-data.js');
+// var postsData = require('../../data/posts-data.js');
 
 
 Page({
   data: {
-    
+
   },
 
   /**
@@ -23,14 +23,11 @@ Page({
     // this.data 在122100版本之后已经失效，使用数据绑定时，需使用this.setData方法
 
     // this.data.postList = postsData.postList;
-    
+
     this.setData({
       // posts_key: post_content
       posts_key: postData.postList
     });
-
-
-
 
     // ES6 中。健值健名相同时，健名可以省略
     // this.setData({
@@ -40,9 +37,10 @@ Page({
     // this.setData({post_content})
   },
 
-  onPostTap:function (even) {
-    var postId = even.currentTarget.dataset.postid;
-    console.log(event.currentTarget.dataset.postid);
+  onPostTap: function (event) {
+    var postId = event.currentTarget.dataset.postid;
+    // console.log(event.currentTarget.dataset.postid);
+
     // console.log("on post id is " + postId);
     wx.navigateTo({
       url: 'post-detail/post-detail?id=' + postId,
