@@ -3,40 +3,27 @@ let postData = require('../../data/posts-data.js')
 
 
 // pages/posts/post.js
+
+// 定义一个变量接收posts-data文件中定义的变量。使用require方法进行接收,此处只能使用相对相对路径。
+var postsData = require('../../data/posts-data.js');
+
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var post_content = [
-    //   {
-    //     date: "Sep 18 2016",
-    //     title: "一行白鹭上青天",
-    //     imgSrc: "/images/post/crab.png",
-    //     avatar: "/images/avatar/1.png",
-    //     content: "春花秋月何时了，往事知多少，小楼昨夜又东风，故国不堪回首月明中。雕栏玉砌应犹在，只是朱颜改，问君能有几多愁，恰似一江春水向东流。",
-    //     reading: "112",
-    //     collection: "96",
-    //   },
-    //   {
-    //     date: "NOV 23 2016",
-    //     title: "静夜思",
-    //     imgSrc: "/images/post/bl.png",
-    //     avatar: "/images/avatar/2.png",
-    //     content: "春花秋月何时了，往事知多少，小楼昨夜又东风，故国不堪回首月明中。雕栏玉砌应犹在，只是朱颜改，问君能有几多愁，恰似一江春水向东流。",
-    //     reading: "112",
-    //     collection: "96",
-    //   }
-    // ]
     // 使用this.setData 绑定数据，然后再设置一个键名，使得在data：{}数据中，存在一个键名，在页面中使用wx:for="{{定义的键名}}"，进行循环。
+
+
+    // this.data 在122100版本之后已经失效，使用数据绑定时，需使用this.setData方法
+
+    // this.data.postList = postsData.postList;
+    
     this.setData({
       // posts_key: post_content
       posts_key: postData.postList
@@ -53,11 +40,14 @@ Page({
     // this.setData({post_content})
   },
 
-  onPostTap: function (event) {
+  onPostTap:function (even) {
+    var postId = even.currentTarget.dataset.postid;
     console.log(event.currentTarget.dataset.postid);
+    // console.log("on post id is " + postId);
     wx.navigateTo({
-      url: '../posts/post-detail/post-detail',
+      url: 'post-detail/post-detail?id=' + postId,
     })
   }
+
 
 })
