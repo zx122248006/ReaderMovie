@@ -1,5 +1,5 @@
 /* pages/posts/post.wxss */
-@import "../post-item/post-item-template.wxss";
+/* @import "../post-item/post-item-template.wxss"; */
 /* 模板引用还需要引用样式文件 */
 
 /* 使用@import 引入模板样式文件 */
