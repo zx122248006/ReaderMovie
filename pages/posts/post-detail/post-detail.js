@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    playMusic: false
   },
 
   /**
@@ -83,32 +83,54 @@ Page({
     p[this.data.postId] = b;
 
     // 设置缓存
-    wx.setStorageSync('collected', p)
+    wx.setStorageSync('collected', p);
 
-    console.log(b)
     // 改变绑定的数据
     this.setData({
       collected: b
-    })
+    });
+
+    // 弹出提示框
+    // 在对象中也可以使用三元表达式来判断值
+    wx.showToast({
+      title: b ? '收藏成功' : '取消成功',
+      duration: 1000
+    });
+
+    // 弹出确认框
+    // wx.showModal({
+    //   title: b ? '收藏成功' : '取消成功',
+    //   content: '是否收藏该文章',
+    //   // showCancel: true,
+    //   cancelText: '取消',
+    //   cancelColor: '#000000',
+    //   confirmText: '确定',
+    //   confirmColor: '#3CC51F'
+    // });
 
 
+  },
 
 
+  // 学习使用showActionSheet API 使用方式
+  // onShareTap: function (event) {
+  //   console.log(event)
+  //   wx.showActionSheet({
+  //     itemList: [
+  //       '1',
+  //       '2',
+  //       '3',
+  //       '4'
+  //     ],
+  //     itemColor: '#405f80',
+  //     success: (result) => {
+  //       console.log(result)
+  //     }
+  //   });
+
+  // }
 
 
-    // let postsCollected = wx.getStorageSync('posts_Collected');
-    // let postCollected = postsCollected[this.data.postId]
-    // postCollected = !postCollected;
-
-    // postsCollected[this.data.postId] = postCollected
-    // wx.setStorageSync('posts_Collected', postsCollected)
-    // console.log(this.data)
-
-    // this.setData({
-    //   collected:postCollected
-    // })
-
-  }
 
   // onCollectionTap: function (event) {
   //   let game = wx.getStorageSync('key')
@@ -125,4 +147,22 @@ Page({
   //   // 缓存的上限最大不能超过10M
   // }
 
+
+
+  onMusicTap: function (event) {
+    let nowMusic = postsData.postList[this.data.postId];
+    let playAudio = this.data.playMusic;
+    // if(playAudio){
+    //   wx.playBackgroundAudio();
+    // }else{
+
+    // }
+
+ 
+    wx.playBackgroundAudio({
+      dataUrl: nowMusic.music.url,
+      title: nowMusic.music.musicTile,
+      coverImgUrl: nowMusic.music.coverImgUrl,
+    });
+  }
 })

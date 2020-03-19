@@ -1,6 +1,6 @@
 <view class="container">
   <image class="head-image" src="{{postKey.headImageSrc}}"></image>
-  <image class="audio" src="/images/music/music-start.png"></image>
+  <image class="audio" src="/images/music/music-start.png" catch:tap="onMusicTap"></image>
   <view class="author-date">
     <image class="avatar" src="{{postKey.avatar}}"></image>
     <text class="author">{{postKey.author}}</text>
@@ -14,7 +14,8 @@
       <!-- 使用wx:if 来判断数据的值，再决定后续的样式 -->
       <image src="/images/icon/collection.png" wx:if="{{collected}}" catch:tap="onCollectionTap"></image>
       <image src="/images/icon/collection-anti.png" wx:else catch:tap="onCollectionTap"></image>
-      <image catch:tap="onShareTap" class="share-img" src="/images/icon/share.png"></image>
+      <!-- <image class="share-img" src="/images/icon/share.png" catch:tap="onShareTap"></image> -->
+      <image class="share-img" src="/images/icon/share.png"></image>
     </view>
     <view class="horizon"></view>
   </view>
