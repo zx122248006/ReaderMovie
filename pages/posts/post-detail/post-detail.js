@@ -1,5 +1,5 @@
 let postsData = require('../../../data/posts-data.js')
-
+const backgroundAudioManager = wx.getBackgroundAudioManager()
 Page({
 
   /**
@@ -8,7 +8,6 @@ Page({
   data: {
     playMusic: false
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -23,7 +22,6 @@ Page({
       postKey: postData[postId],
       postId
     })
-    // console.log(this.data)
 
     // 获取缓存
     let post = wx.getStorageSync('collected');
@@ -61,14 +59,12 @@ Page({
     // }
 
 
-    console.log(this.data)
   },
 
   // 点击收藏按钮时
   onCollectionTap: function (event) {
     // 获取缓存
     let p = wx.getStorageSync('collected');
-    // console.log(p)
     // 获取当前文章的缓存
     let b = p[this.data.postId];
 
@@ -150,19 +146,42 @@ Page({
 
 
   onMusicTap: function (event) {
-    let nowMusic = postsData.postList[this.data.postId];
+
     let playAudio = this.data.playMusic;
-    // if(playAudio){
-    //   wx.playBackgroundAudio();
-    // }else{
+    if (playAudio) {
+      backgroundAudioManager.pause();
+    } else {
+      this.backgroundAudioReady()
+      backgroundAudioManager.play();
+    }
 
-    // }
+    this.setData({
+      playMusic: playAudio ? false : true
+    })
 
- 
-    wx.playBackgroundAudio({
-      dataUrl: nowMusic.music.url,
-      title: nowMusic.music.musicTile,
-      coverImgUrl: nowMusic.music.coverImgUrl,
-    });
+    // backgroundAudioManager.play()
+
+    // wx.playBackgroundAudio({
+    //   dataUrl: nowMusic.music.url,
+    //   title: nowMusic.music.musicTile,
+    //   coverImgUrl: nowMusic.music.coverImgUrl,
+    // });
+  },
+
+  // 新版小程序使用const backgroundAudioManager = wx.getBackgroundAudioManager()
+  backgroundAudioReady: function () {
+    let nowMusic = postsData.postList[this.data.postId].music;
+    backgroundAudioManager.title = nowMusic.musicTitle
+    backgroundAudioManager.epname = nowMusic.musicTitle
+    backgroundAudioManager.singer = nowMusic.musicAuthor
+    backgroundAudioManager.coverImgUrl = nowMusic.coverImgUrl
+    backgroundAudioManager.src = nowMusic.url
+  },
+  onUnload: function () {
+    backgroundAudioManager.stop()
+    this.setData({
+      playMusic: false
+    })
   }
 })
+

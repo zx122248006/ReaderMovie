@@ -14,5 +14,5 @@
     
   },
   "sitemapLocation": "sitemap.json",
-  "requiredBackgroundModes": ["audio", "location"]
+  "requiredBackgroundModes": ["audio"]
 }

@@ -1,6 +1,7 @@
 <view class="container">
-  <image class="head-image" src="{{postKey.headImageSrc}}"></image>
-  <image class="audio" src="/images/music/music-start.png" catch:tap="onMusicTap"></image>
+  <image class="head-image" src="{{playMusic?postKey.music.coverImg:postKey.headImageSrc}}"></image>
+  <!-- 使用三运运算符来判断是否播放，来决定显示的图片 -->
+  <image class="audio" src="{{playMusic?'/images/music/music-stop.png':'/images/music/music-start.png'}}" catch:tap="onMusicTap"></image>
   <view class="author-date">
     <image class="avatar" src="{{postKey.avatar}}"></image>
     <text class="author">{{postKey.author}}</text>

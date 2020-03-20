@@ -18,7 +18,6 @@
   opacity: 0.6;
 }
 
-
 .author-date {
   flex-direction: row;
   margin-left: 30rpx;
@@ -74,10 +73,11 @@
 .circle-img image {
   width: 90rpx;
   height: 90rpx;
+  margin-right: 10rpx;
 }
 
 .share-img {
-  margin-left: 30rpx;
+  margin-right: 10rpx;
 }
 
 .horizon {

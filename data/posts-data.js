@@ -13,10 +13,10 @@ var local_database = [{
   dateTime: "3小时前",
   detail: "之影以兰牛难？方理举趣典玛半日念三？皮！友欢招料竟万旁年恋质相半全仍乱爱？临站。舞化物性庭慢比击况？机雪样低与。兴次星。么量日战彩传戏就热永倒理以刚集路居板碃。",
   music: {
-    url: 'http://m10.music.126.net/20200319172019/959b00dd66a0676e2bf6bedb8a43cf2a/ymusic/fa90/df9c/59f7/95c4a2802e0b9191ae1a048f127e53c5.mp3',
+    url: 'https://7465-test-nxfuq-1301527806.tcb.qcloud.la/1.mp3?sign=9ea498ad3d7ff8290c49c629b2801883&t=1584693820',
     musicTitle: '成都',
-    coverImg: 'http://p1.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg?param=130y130'
-
+    coverImg: 'http://p1.music.126.net/34YW1QtKxJ_3YnX9ZzKhzw==/2946691234868155.jpg?param=130y130',
+    musicAuthor: '赵雷'
   }
 },
 {
@@ -32,7 +32,13 @@ var local_database = [{
   headImageSrc: "/images/post/vr.png",
   author: "自波居虽准",
   dateTime: "4小时前",
-  detail: "约存规过中州这禁灵乡半研！察莱变引头影。除洛区室装。承位塞传再全吸妙队铁书萨痛？克伴下日架掉女采醒求听宣品都命只金志。。妻罗投舞志摇担重份超处责！纪适欢名话居？深意纳欢里谁松罗去！良洗娜丝或妈决余？！"
+  detail: "约存规过中州这禁灵乡半研！察莱变引头影。除洛区室装。承位塞传再全吸妙队铁书萨痛？克伴下日架掉女采醒求听宣品都命只金志。。妻罗投舞志摇担重份超处责！纪适欢名话居？深意纳欢里谁松罗去！良洗娜丝或妈决余？！",
+  music: {
+    url: 'https://7465-test-nxfuq-1301527806.tcb.qcloud.la/2.mp3?sign=fdfda000c05aa16634633f8024af1f79&t=1584693873',
+    musicTitle: '理想',
+    coverImg: 'http://p2.music.126.net/wldFtES1Cjnbqr5bjlqQbg==/18876415625841069.jpg?param=130y130',
+    musicAuthor: '赵雷'
+  }
 },
 {
   title: "雨霖铃",
@@ -47,7 +53,13 @@ var local_database = [{
   headImageSrc: "/images/post/cat.png",
   author: "翻传曾该能",
   dateTime: "6小时前",
-  detail: "关血当喜展试而同良消响巴别盖露！默神青。底基戴乎姐似应遇往所？跟特持右了务定数。律趣后钱紧可盖萨西球谁。及号汉界听路。。清根张通战充来回考故超臓排子床写教？题！亚教务让静张式族相线方。错位庭分科贝简！"
+  detail: "关血当喜展试而同良消响巴别盖露！默神青。底基戴乎姐似应遇往所？跟特持右了务定数。律趣后钱紧可盖萨西球谁。及号汉界听路。。清根张通战充来回考故超臓排子床写教？题！亚教务让静张式族相线方。错位庭分科贝简！",
+  music: {
+    url: 'https://7465-test-nxfuq-1301527806.tcb.qcloud.la/3.mp3?sign=83d6b816282f43fa5ac79aa8350fbdea&t=1584693889',
+    musicTitle: '我们的时光',
+    coverImg: 'http://p2.music.126.net/wldFtES1Cjnbqr5bjlqQbg==/18876415625841069.jpg?param=130y130',
+    musicAuthor: '赵雷'
+  }
 },
 {
   title: "明月几时有",
@@ -62,7 +74,13 @@ var local_database = [{
   headImageSrc: "/images/post/sls.jpg",
   author: "光位过然",
   dateTime: "6小时前",
-  detail: "统人伴藸善响。难拉万叶沙臓床委选只称亚！简展牌塞轻手？用敢王馆所。第读秋论票爱！晚时增介费汉春岁国背止际毛费波金戏？中！米静代石苏朋等联换约只今据仍随卖术。书！即牛馆李着夜先规点负犯跟上娜言离。进很？"
+  detail: "统人伴藸善响。难拉万叶沙臓床委选只称亚！简展牌塞轻手？用敢王馆所。第读秋论票爱！晚时增介费汉春岁国背止际毛费波金戏？中！米静代石苏朋等联换约只今据仍随卖术。书！即牛馆李着夜先规点负犯跟上娜言离。进很？",
+  music: {
+    url: 'https://7465-test-nxfuq-1301527806.tcb.qcloud.la/4.mp3?sign=cc8b7a6a56252b3c607b97e5fda1c001&t=1584693905',
+    musicTitle: '鼓楼',
+    coverImg: 'http://p2.music.126.net/wldFtES1Cjnbqr5bjlqQbg==/18876415625841069.jpg?param=130y130',
+    musicAuthor: '赵雷'
+  }
 },
 {
   title: "陋室铭",
@@ -77,11 +95,17 @@ var local_database = [{
   headImageSrc: "/images/post/xiaolong.jpg",
   author: "阵据酒",
   dateTime: "9小时前",
-  detail: "新国孤对是蒙原含幸请？黄剧雪精旧雷西由。甚议丈宫形？族听群会守营！仅男切此假克？烈这致不洋伤藸民此娘。义洲准著线投传美？挥洗药紧还喜汽洲误。西你容乎哥术。古笔。党主无山列久图计文死？招拥陈来职？餐集？"
+  detail: "新国孤对是蒙原含幸请？黄剧雪精旧雷西由。甚议丈宫形？族听群会守营！仅男切此假克？烈这致不洋伤藸民此娘。义洲准著线投传美？挥洗药紧还喜汽洲误。西你容乎哥术。古笔。党主无山列久图计文死？招拥陈来职？餐集？", music: {
+    url: 'https://7465-test-nxfuq-1301527806.tcb.qcloud.la/5.mp3?sign=189d0d656a717276f14ebe5b27edd827&t=1584693959',
+    musicTitle: '南方姑娘',
+    coverImg: 'http://p2.music.126.net/wldFtES1Cjnbqr5bjlqQbg==/18876415625841069.jpg?param=130y130',
+    musicAuthor: '赵雷'
+  }
 },
 ]
 
+
 // 对脚本文件定义出口,使得其他脚本文件可以访问 本脚本文件。使用postList属性变量名访问，可以使用其他属性名进行定义。
 module.exports = {
-  postList: local_database
+  postList: local_database,
 }
