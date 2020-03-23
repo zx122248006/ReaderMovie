@@ -57,8 +57,23 @@ Page({
     //   postsCollected[postId] = false;
     //   wx.setStorageSync('posts_Collected', postsCollected);
     // }
+    this.musicPlaying();
+
+  },
 
 
+  musicPlaying: function () {
+    let $this = this;
+    backgroundAudioManager.onPlay(() => {
+      $this.setData({
+        playMusic: true
+      })
+    });
+    backgroundAudioManager.onPause(() => {
+      $this.setData({
+        playMusic: false
+      })
+    })
   },
 
   // 点击收藏按钮时

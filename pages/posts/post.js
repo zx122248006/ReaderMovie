@@ -47,4 +47,14 @@ Page({
   }
 
 
+  // target 和 currentTarget 
+  // target指的是当前点击的组件，而currentTarget指的是事件捕获的组件
+  // target在这里值的是image，而currentTarget值的是swiper
+  , onSwpierTap: function (event) {
+    let swiperPostId = event.target.dataset.postid;
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id=' + swiperPostId,
+    })
+  }
+
 })

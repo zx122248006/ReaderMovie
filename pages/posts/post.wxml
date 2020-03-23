@@ -1,7 +1,7 @@
 <!-- 引用模板时。可以使用相对路径与绝对路径 -->
 <import src="post-item/post-item-template.wxml"></import>
 <view class="comtainer">
-  <swiper indicator-dots="true" autoplay="true" interval="5000">
+  <!-- <swiper indicator-dots="true" autoplay="true" interval="5000">
     <swiper-item>
       <image src="/images/wx.png"></image>
     </swiper-item>
@@ -11,6 +11,13 @@
     <swiper-item>
       <image src="/images/iqiyi.png"></image>
     </swiper-item>
+  </swiper> -->
+  <swiper indicator-dots="true" autoplay="true" interval="5000" catch:tap="onSwpierTap">
+    <block wx:for="{{posts_key}}" wx:key="bbc" wx:for-item="item">
+      <swiper-item>
+        <image src="{{item.headImageSrc}}" data-postid="{{item.postId}}"></image>
+      </swiper-item>
+    </block>
   </swiper>
   <block wx:for="{{posts_key}}" wx:key="a" wx:for-item="b">
     <!-- 使用template模板，还需要将数据传递过去，传递需要使用{{xxx}}的格式，xxx指代的是wx:for-item 的值 -->
