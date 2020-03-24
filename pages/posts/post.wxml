@@ -27,6 +27,7 @@
         <!-- 为了使传递过来的数据不用再加前缀，需要在传值的时候增加... -->
       </template>
     </view>
+    
     <!-- <view class="post-container"> -->
     <!-- 可以在wx:for 后面使用wx:for-index="i" 获取索引 -->
     <!-- <text>{{index}}</text> -->

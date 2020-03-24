@@ -1,0 +1,10 @@
+<!-- pages/movie/movie.wxml -->
+<import src="movie-list/movie-list-template.wxml"></import>
+<view class="container">
+  <!-- <block wx:for="{{moviesData}}" wx:key="i" wx:for-item="event"> -->
+
+  <template is="movieListTemplate" data="{{moviesData}}"></template>
+  <!-- </block> -->
+  <template is="movieListTemplate"></template>
+  <template is="movieListTemplate"></template>
+</view>
