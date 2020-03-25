@@ -2,8 +2,8 @@
 
 <template name="movieTemplate">
   <view class="movie-container">
-    <image class="movie-img" src="{{images.large}}"></image>
-    <text class="movie-title">{{title}}</text>
-    <template is="starsTemplate"></template>
+    <image class="movie-img" src="{{movieImg}}"></image>
+    <text class="movie-title">{{movieTitle}}</text>
+    <template is="starsTemplate" data="{{average}}"></template>
   </view>
 </template>
