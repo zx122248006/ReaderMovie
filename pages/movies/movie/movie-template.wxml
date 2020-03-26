@@ -4,6 +4,6 @@
   <view class="movie-container">
     <image class="movie-img" src="{{movieImg}}"></image>
     <text class="movie-title">{{movieTitle}}</text>
-    <template is="starsTemplate" data="{{average}}"></template>
+    <template is="starsTemplate" data="{{average,stars}}"></template>
   </view>
 </template>
