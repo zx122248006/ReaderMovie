@@ -4,7 +4,7 @@ let postData = require('../../data/posts-data.js')
 
 // pages/posts/post.js
 
-// 定义一个变量接收posts-data文件中定义的变量。使用require方法进行接收,此处只能使用相对相对路径。
+// 定义一个变量接收posts-data文件中定义的变量。使用require方法进行接收,此处只能使用相对路径。
 // var postsData = require('../../data/posts-data.js');
 
 
@@ -36,6 +36,7 @@ Page({
     // this.setData({post_content})
   },
 
+  // 文章列表跳转
   onPostTap: function (event) {
     var postId = event.currentTarget.dataset.postid;
     // console.log(event.currentTarget.dataset.postid);
@@ -46,7 +47,7 @@ Page({
     })
   }
 
-
+  // 轮播图跳转
   // target 和 currentTarget 
   // target指的是当前点击的组件，而currentTarget指的是事件捕获的组件
   // target在这里值的是image，而currentTarget值的是swiper

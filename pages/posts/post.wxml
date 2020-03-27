@@ -12,6 +12,7 @@
       <image src="/images/iqiyi.png"></image>
     </swiper-item>
   </swiper> -->
+  
   <swiper indicator-dots="true" autoplay="true" interval="5000" catch:tap="onSwpierTap">
     <block wx:for="{{posts_key}}" wx:key="bbc" wx:for-item="item">
       <swiper-item>

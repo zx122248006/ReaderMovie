@@ -1,66 +1,67 @@
-// pages/movies/movie-more/movie-more.js
+var util = require('../../../utils/util.js')
+
+var app = getApp();//取得全局App({..})实例
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+
   data: {
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad: function (event) {
+    let NavigationBarTitle = event.listName;
+    let dataUrl;
+    wx.setNavigationBarTitle({
+      title: NavigationBarTitle,
+    });
+
+    switch (NavigationBarTitle) {
+      case "Top250":
+        dataUrl = app.globalData.doubanBase + "/v2/movie/top250"
+        break;
+      case "即将上映":
+        dataUrl = app.globalData.doubanBase + "/v2/movie/coming_soon"
+        break;
+      case "正在热映":
+        dataUrl = app.globalData.doubanBase + "/v2/movie/in_theaters"
+        break;
+    }
+
+    // 使用回调函数。不需要加()
+    util.http(dataUrl, this.processDoubanData)
 
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  processDoubanData: function (TotalData) {
 
-  },
+    let moviesArr = [];
+    let movieTitle, average, movieImg, movieId, tempData, stars;
+    // 获取数据
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+    for (const item of TotalData.data.subjects) {
 
-  },
+      movieTitle = item.title
+      // 判断标题长度。当标题长度超过6以后，截取标题，并增加...
+      if (item.title.length >= 6) {
+        movieTitle = movieTitle.substring(0, 6) + '...'
+      }
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+      average = item.rating.average;
+      movieImg = item.images.large;
+      movieId = item.id
+      stars = util.converToStarsArray(item.rating.stars)
 
-  },
+      tempData = {
+        movieTitle, average, movieImg, movieId, stars
+      }
+      moviesArr.push(tempData)
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
+    }
+    this.setData({
+      moviesArr
+    })
 
   }
+
 })

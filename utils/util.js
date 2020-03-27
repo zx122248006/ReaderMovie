@@ -29,7 +29,25 @@ function converToStarsArray (text) {
   return arr;
 }
 
+
+function http (url, callBack) {
+
+  wx.request({
+    url: url,
+    header: { 'Content-type': 'json' },
+    method: 'GET',
+    dataType: 'json',
+    success: (result) => {
+      // $this.processDoubanData(result.data)
+      callBack(result)
+    }
+  });
+
+}
+
+
 // 将方法输出
 module.exports = {
-  converToStarsArray: converToStarsArray
+  converToStarsArray: converToStarsArray,
+  http: http
 }
