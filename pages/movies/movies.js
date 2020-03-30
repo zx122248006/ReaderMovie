@@ -13,13 +13,15 @@ Page({
   data: {
     theaters: {},
     top250: {},
-    comingSoon: {}
+    comingSoon: {},
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (event) {
+    let key = "?apikey=0df993c66c0c636e29ecbb5344252a4a"
     let theaters = "/v2/movie/in_theaters" + "?start=0&count=3";
     let top250 = "/v2/movie/top250" + "?start=0&count=3";
     let comingSoon = "/v2/movie/coming_soon" + "?start=0&count=3"
@@ -28,6 +30,8 @@ Page({
     this.getApiData(theaters, "theaters", "正在热映")
     this.getApiData(comingSoon, "comingSoon", "即将上映")
   },
+
+
 
   getApiData: function (link, dataName, listName) {
     let $this = this;
@@ -90,6 +94,8 @@ Page({
         // 所以在此绑定数据
       };
     }
+ 
+
     // 传递数据，因为readData 本身就是一个对象。所以这里不用{}包裹
     this.setData(
       readData

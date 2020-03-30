@@ -1,1 +1,6 @@
 /* pages/movies/movie-more/movie-more.wxss */
+@import "../movie-grid/movie-grid-template.wxss";
+
+.movie-container {
+  margin-bottom: 40rpx;
+}

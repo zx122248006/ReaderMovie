@@ -6,7 +6,9 @@ Page({
 
 
   data: {
-
+    newDataUrl: "",
+    totalRequire: 0,
+    isEmpty: true
   },
 
   onLoad: function (event) {
@@ -27,18 +29,24 @@ Page({
         dataUrl = app.globalData.doubanBase + "/v2/movie/in_theaters"
         break;
     }
-
+    this.setData({
+      newDataUrl: dataUrl
+    })
     // 使用回调函数。不需要加()
     util.http(dataUrl, this.processDoubanData)
 
   },
 
-  processDoubanData: function (TotalData) {
+  onScrollLower: function (event) {
+    let newUrl = this.data.newDataUrl + "?start=" + this.data.totalRequire + "&count=20";
+    util.http(newUrl, this.processDoubanData)
+  },
 
+  processDoubanData: function (TotalData) {
     let moviesArr = [];
     let movieTitle, average, movieImg, movieId, tempData, stars;
-    // 获取数据
 
+    // 获取数据
     for (const item of TotalData.data.subjects) {
 
       movieTitle = item.title
@@ -56,10 +64,21 @@ Page({
         movieTitle, average, movieImg, movieId, stars
       }
       moviesArr.push(tempData)
-
     }
+
+    let movies;
+
+    if (!this.data.isEmpty) {
+      movies = this.data.movies.concat(moviesArr)
+
+    } else {
+      movies = moviesArr;
+      this.data.isEmpty = false
+    }
+
+    this.data.totalRequire += 20;
     this.setData({
-      moviesArr
+      movies: movies
     })
 
   }

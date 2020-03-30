@@ -31,7 +31,7 @@ function converToStarsArray (text) {
 
 
 function http (url, callBack) {
-
+// http方法里面还传递了一个callBack 方法。
   wx.request({
     url: url,
     header: { 'Content-type': 'json' },

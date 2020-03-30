@@ -1,2 +1,4 @@
-<!--pages/movies/movie-more/movie-more.wxml-->
-<text>pages/movies/movie-more/movie-more.wxml</text>
+<import src="/pages/movies/movie-grid/movie-grid-template.wxml"></import>
+<view>
+  <template is="movieGridTemplate" data="{{movies}}"></template>
+</view>
