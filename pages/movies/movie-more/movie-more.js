@@ -37,10 +37,12 @@ Page({
 
   },
 
-  onScrollLower: function (event) {
-    let newUrl = this.data.newDataUrl + "?start=" + this.data.totalRequire + "&count=20";
-    util.http(newUrl, this.processDoubanData)
-  },
+  // onScrollLower: function (event) {
+  //   let newUrl = this.data.newDataUrl + "?start=" + this.data.totalRequire + "&count=20";
+  //   util.http(newUrl, this.processDoubanData)
+  //   // 设置loading动画，在标题栏
+  //   wx.showNavigationBarLoading();
+  // },
 
   processDoubanData: function (TotalData) {
     let moviesArr = [];
@@ -68,9 +70,10 @@ Page({
 
     let movies;
 
+    // 判断当前是否第一次加载
+    // 如果不是第一次加载，就获取当前data中的数据，并且和请求的数据组合到一起
     if (!this.data.isEmpty) {
       movies = this.data.movies.concat(moviesArr)
-
     } else {
       movies = moviesArr;
       this.data.isEmpty = false
@@ -80,7 +83,27 @@ Page({
     this.setData({
       movies: movies
     })
+    wx.hideNavigationBarLoading();
 
+  },
+
+  // 下拉刷新
+  onPullDownRefresh: function () {
+    let refreshUrl = this.data.newDataUrl + "?start=0&count=20";
+    this.data.isEmpty = true;
+    this.data.movies = {};
+    this.data.totalRequire = 0
+    util.http(refreshUrl, this.processDoubanData)
+    wx.showNavigationBarLoading();
+    console.log('1')
+  },
+
+  // 加载更多
+  onReachBottom: function () {
+    let newUrl = this.data.newDataUrl + "?start=" + this.data.totalRequire + "&count=20";
+    util.http(newUrl, this.processDoubanData)
+    // 设置loading动画，在标题栏
+    wx.showNavigationBarLoading();
   }
 
 })
