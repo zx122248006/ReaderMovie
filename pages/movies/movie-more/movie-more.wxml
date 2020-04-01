@@ -1,4 +1,6 @@
 <import src="/pages/movies/movie-grid/movie-grid-template.wxml"></import>
 <view>
-  <template is="movieGridTemplate" data="{{movies}}"></template>
+  <template is="movieGridTemplate" data="{{moviesList}}"></template>
 </view>
+
+

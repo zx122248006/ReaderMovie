@@ -59,6 +59,7 @@ Page({
 
       average = item.rating.average;
       movieImg = item.images.large;
+
       movieId = item.id
       stars = util.converToStarsArray(item.rating.stars)
 
@@ -81,7 +82,7 @@ Page({
 
     this.data.totalRequire += 20;
     this.setData({
-      movies: movies
+      moviesList: movies
     })
     wx.hideNavigationBarLoading();
 
@@ -91,7 +92,7 @@ Page({
   onPullDownRefresh: function () {
     let refreshUrl = this.data.newDataUrl + "?start=0&count=20";
     this.data.isEmpty = true;
-    this.data.movies = {};
+    this.data.moviesList = {};
     this.data.totalRequire = 0
     util.http(refreshUrl, this.processDoubanData)
     wx.showNavigationBarLoading();

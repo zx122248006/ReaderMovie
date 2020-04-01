@@ -1,8 +1,17 @@
 <!-- pages/movie/movie.wxml -->
 <import src="movie-list/movie-list-template.wxml"></import>
-<view class="container">
+<import src="../movies/movie-grid/movie-grid-template.wxml"></import>
+<view class="search">
+  <icon type="search" size="13" color="#405f80" class="search-img" />
+  <input type="text" placeholder="Avengers" placeholder-class="placeholder" bindfocus="onBindFocus" bindchange="onBindChange" />
+  <image src="/images/icon/xx.png" bind:tap="onCancelImgTap" wx:if="{{searchPannelShow}}" class="xx-img" />
+</view>
+<view class="container" wx:if="{{containerShow}}">
   <!-- 此处使用{{...theaters}}是因为数据结构的下一级都是moviesList 所以可以使用同一个模板。在下一级模板可以使用 data={{moviesList}} 接收不同的数据传递过去的数据 -->
   <template is="movieListTemplate" data="{{...top250}}"></template>
   <template is="movieListTemplate" data="{{...theaters}}"></template>
   <template is="movieListTemplate" data="{{...comingSoon}}"></template>
+</view>
+<view class="search-pannel" wx:if="{{searchPannelShow}}">
+  <template is="movieGridTemplate" data="{{...searchResult}}"></template>
 </view>

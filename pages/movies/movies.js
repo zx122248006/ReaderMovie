@@ -14,7 +14,10 @@ Page({
     theaters: {},
     top250: {},
     comingSoon: {},
+    searchResult: {},
 
+    containerShow: true,
+    searchPannelShow: false
   },
 
   /**
@@ -53,7 +56,6 @@ Page({
 
   onMoreTap: function (event) {
     let listName = event.currentTarget.dataset.category
-    console.log(listName)
     wx.navigateTo({
       url: 'movie-more/movie-more?listName=' + listName,
     });
@@ -94,7 +96,7 @@ Page({
         // 所以在此绑定数据
       };
     }
- 
+
 
     // 传递数据，因为readData 本身就是一个对象。所以这里不用{}包裹
     this.setData(
@@ -102,7 +104,37 @@ Page({
     )
 
 
+    console.log(this.data)
 
+  },
+
+  // 搜索框获得焦点时
+  onBindFocus: function () {
+    // 此处改变data 的值需要用setData 才能立即改变现实的样式
+    this.setData({
+      containerShow: false,
+      searchPannelShow: true
+    })
+  },
+
+  // 关闭搜索结果
+  onCancelImgTap: function () {
+    this.setData({
+      containerShow: true,
+      searchPannelShow: false
+    })
+
+    // 用于清空搜索结果
+    // this.data.searchResult = {}
+  },
+
+  // 当搜索框数据改变的时候，获取数据
+  onBindChange: function (event) {
+    let text = event.detail.value;
+
+    let searchUrl = '/v2/movie/search?q=' + text;
+
+    this.getApiData(searchUrl, "searchResult", "")
   }
 
 })
