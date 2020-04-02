@@ -59,8 +59,8 @@ Page({
 
       average = item.rating.average;
       movieImg = item.images.large;
-
       movieId = item.id
+
       stars = util.converToStarsArray(item.rating.stars)
 
       tempData = {
@@ -74,7 +74,7 @@ Page({
     // 判断当前是否第一次加载
     // 如果不是第一次加载，就获取当前data中的数据，并且和请求的数据组合到一起
     if (!this.data.isEmpty) {
-      movies = this.data.movies.concat(moviesArr)
+      movies = this.data.moviesList.concat(moviesArr)
     } else {
       movies = moviesArr;
       this.data.isEmpty = false
@@ -96,7 +96,6 @@ Page({
     this.data.totalRequire = 0
     util.http(refreshUrl, this.processDoubanData)
     wx.showNavigationBarLoading();
-    console.log('1')
   },
 
   // 加载更多

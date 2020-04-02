@@ -1,5 +1,5 @@
+// 判断评分星星数
 function converToStarsArray (text) {
-
 
   // toString 用于将传递过来的参数转换为字符串类型，再使用substring 取得第一位的值
   let stars = text.toString().substring(0, 1)
@@ -12,9 +12,7 @@ function converToStarsArray (text) {
   for (let i = 0; i < stars; i++) {
     arr.push(1)
   }
-
   arrLength = arr.length
-
   if (arrLength < 5) {
     for (let i = 0; i < 5 - arrLength; i++) {
       if (i == 0 && parseInt(star) != 0) {
@@ -23,13 +21,11 @@ function converToStarsArray (text) {
         arr.push(0)
       }
     }
-
   }
-
   return arr;
 }
 
-
+// 调用请求
 function http (url, callBack) {
   // http方法里面还传递了一个callBack 方法。
   wx.request({
@@ -40,15 +36,32 @@ function http (url, callBack) {
     success: (result) => {
       // $this.processDoubanData(result.data)
       callBack(result)
-      console.log(result)
     }
   });
+}
 
+// 获取演员名字并且根据分隔符进行分隔
+function getCastsName (data) {
+  var p = [];
+  for (const castsName of data) {
+    p.push(castsName.name)
+  }
+  return p.join(' / ')
+}
+
+function setTitle (data) {
+  if (data.length >= 6) {
+    return data.substring(0, 6) + '...'
+  } else {
+    return data
+  }
 }
 
 
 // 将方法输出
 module.exports = {
   converToStarsArray: converToStarsArray,
-  http: http
+  http: http,
+  getCastsName: getCastsName,
+  setTitle
 }

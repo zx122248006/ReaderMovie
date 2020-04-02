@@ -54,6 +54,14 @@ Page({
 
   },
 
+  // 电影列表页面点击电影后跳转
+  onMovieTap: function (event) {
+    let moveId = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: 'movies-detail/movies-detail?id=' + moveId,
+    });
+  },
+
   onMoreTap: function (event) {
     let listName = event.currentTarget.dataset.category
     wx.navigateTo({
@@ -97,14 +105,10 @@ Page({
       };
     }
 
-
     // 传递数据，因为readData 本身就是一个对象。所以这里不用{}包裹
     this.setData(
       readData
     )
-
-
-    console.log(this.data)
 
   },
 
