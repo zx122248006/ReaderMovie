@@ -32,10 +32,9 @@ Page({
     this.getApiData(top250, "top250", "Top250")
     this.getApiData(theaters, "theaters", "正在热映")
     this.getApiData(comingSoon, "comingSoon", "即将上映")
+
   },
-
-
-
+  
   getApiData: function (link, dataName, listName) {
     let $this = this;
 
@@ -62,6 +61,7 @@ Page({
     });
   },
 
+  // 更多跳转
   onMoreTap: function (event) {
     let listName = event.currentTarget.dataset.category
     wx.navigateTo({
@@ -70,6 +70,7 @@ Page({
   },
 
   processDoubanData: function (moviesDouban, dataName, listName) {
+    let $this = this
     let moviesArr = [];
     let movieTitle, average, movieImg, movieId, tempData, stars;
     let readData = {};
@@ -83,7 +84,9 @@ Page({
       }
 
       average = item.rating.average;
+  
       movieImg = item.images.large;
+
       movieId = item.id
       // 使用util.converToStarsArray 调用星星的js，返回一个数组
       // 根据数组来判断显示多少颗星星
@@ -139,7 +142,8 @@ Page({
     let searchUrl = '/v2/movie/search?q=' + text;
 
     this.getApiData(searchUrl, "searchResult", "")
-  }
+  },
+
 
 })
 

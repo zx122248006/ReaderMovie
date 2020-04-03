@@ -88,6 +88,14 @@ Page({
 
   },
 
+  // 电影列表页面点击电影后跳转
+  onMovieTap: function (event) {
+    let moveId = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../movies-detail/movies-detail?id=' + moveId,
+    });
+  },
+
   // 下拉刷新
   onPullDownRefresh: function () {
     let refreshUrl = this.data.newDataUrl + "?start=0&count=20";

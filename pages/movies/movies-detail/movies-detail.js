@@ -16,8 +16,6 @@ Page({
     let movieId = event.id;
     let moiveUrl = app.globalData.doubanBase + '/v2/movie/subject/' + movieId;
     util.http(moiveUrl, this.processDoubanData)
-
-
   },
 
   processDoubanData: function (data) {
@@ -35,7 +33,7 @@ Page({
 
     // join用于将数组使用指定的分隔符分隔，并组成一个字符串
 
-
+    // 设置数据对象
     let movieArr = {
       castsName: util.getCastsName(movieData.casts),
       genres: movieData.genres.join('、'),
@@ -49,30 +47,24 @@ Page({
       summer: movieData.summary ? movieData.summary : testSummary
     }
 
+    // 根据获取的数据设置当前页面的title
     wx.setNavigationBarTitle({
       title: util.setTitle(movieData.title)
     });
 
-    // wx.request({
-    //   url: movieData.images.large,
-    //   header: { 'content-type': 'application/json' },
-    //   method: 'GET',
-    //   dataType: 'json',
-    //   success: (result) => {
-    //     console.log(result)
-    //   }, fail: () => {
-    //     console.log('1')
-    //   },
-    // });
 
-
-
-
+    // 将数据以对象的方式绑定到data中
     this.setData(movieArr)
-
-    console.log(this.data)
   },
 
+
+  onImageLoadError: function (event) {
+    console.log(event)
+    let image = '/images/wx.png'
+    this.setData({
+      image
+    })
+  }
 
 
 })

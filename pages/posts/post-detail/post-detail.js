@@ -63,17 +63,28 @@ Page({
 
 
   musicPlaying: function () {
-    let $this = this;
+    // let $this = this;
     backgroundAudioManager.onPlay(() => {
-      $this.setData({
+      this.setData({
         playMusic: true
       })
     });
     backgroundAudioManager.onPause(() => {
-      $this.setData({
+      this.setData({
         playMusic: false
       })
-    })
+    });
+    backgroundAudioManager.onEnded(() => {
+      this.setData({
+        playMusic: false
+      })
+    });
+
+    backgroundAudioManager.onStop(() => {
+      this.setData({
+        playMusic: false
+      })
+    });
   },
 
   // 点击收藏按钮时
