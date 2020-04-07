@@ -11,7 +11,7 @@ App({
   // }
 
   globalData: {
-    doubanBase: "http://t.talelin.com"
+    doubanBase: "https://douban.uieee.com"
   },
   
 
