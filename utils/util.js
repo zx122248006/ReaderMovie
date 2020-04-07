@@ -57,11 +57,23 @@ function setTitle (data) {
   }
 }
 
+function castsNaI (data) {
+  let castInfo= [];
+  for (const e of data) {
+    castInfo.push({
+      castName:e.name,
+      castImg:e.avatars.large
+    })
+  }
+  console.log(castInfo)
+}
+
 
 // 将方法输出
 module.exports = {
   converToStarsArray: converToStarsArray,
   http: http,
   getCastsName: getCastsName,
-  setTitle
+  setTitle,
+  castsNaI
 }

@@ -11,15 +11,30 @@ Page({
     //   url: '../posts/post',
     // })
 
-    wx.wx.switchTab({
+    wx.switchTab({
       url: '../posts/post',
-      // success: (result)=>{
-        
-      // },
-      // fail: ()=>{},
-      // complete: ()=>{}
-    });
+    }); 
   },
+
+  onLoad:function(){
+
+    wx.getUserInfo({
+      withCredentials: 'false',
+      lang: 'zh_CN',
+      timeout:10000,
+      success: (res)=>{
+       this.setUserInfo(res)
+      }
+    })
+    
+  },
+
+  setUserInfo:function(event){
+    this.setData({
+      userName :event.userInfo.nickName,
+      userImg:event.userInfo.avatarUrl
+    })
+  }
 
 
 })
